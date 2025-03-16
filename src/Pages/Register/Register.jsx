@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import fondo from '../../assets/fondo.jpg';
 import personaje from '../../assets/bangbu.png';
 
-const Login = () => {
+const Register = () => {
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleRegister = (e) => {
     e.preventDefault();
     navigate('/home');
   };
@@ -17,9 +17,15 @@ const Login = () => {
       </div>
       <div style={styles.backgroundBottom}></div>
       <div style={styles.formContainer}>
-        <h1 style={styles.title}>Inicio de Sesión</h1>
-        <p style={styles.subtitle}>Ingresa tus datos</p>
-        <form style={styles.form} onSubmit={handleLogin}>
+        <h1 style={styles.title}>Registro</h1>
+        <p style={styles.subtitle}>Crea tu cuenta</p>
+        <form style={styles.form} onSubmit={handleRegister}>
+          <label style={styles.label}>Nombre</label>
+          <input
+            type="text"
+            placeholder="Nombre completo"
+            style={styles.input}
+          />
           <label style={styles.label}>Correo</label>
           <input
             type="email"
@@ -32,15 +38,25 @@ const Login = () => {
             placeholder="Contraseña"
             style={styles.input}
           />
-         
-          <button type="submit" style={styles.loginButton}>
-            Iniciar Sesión
+          <label style={styles.label}>Repetir Contraseña</label>
+          <input
+            type="password"
+            placeholder="Repetir Contraseña"
+            style={styles.input}
+          />
+          <button type="submit" style={styles.registerButton}>
+            Registrarse
           </button>
         </form>
-        <p style={styles.registerText}>
-          ¿No tienes cuenta?{' '}
+        <p style={styles.loginText}>
+          ¿Ya tienes cuenta?{' '}
         </p>
-        <button style={styles.registerButton}>Registrarse</button>
+        <button
+          style={styles.loginButton}
+          onClick={() => navigate('')}
+        >
+          Iniciar Sesión
+        </button>
         <div style={styles.characterContainer}>
           <img src={personaje} alt="Personaje" style={styles.character} />
         </div>
@@ -49,7 +65,7 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
 
 const styles = {
   container: {
@@ -67,8 +83,8 @@ const styles = {
     left: 0,
     width: '100%',
     height: '40%',
-    backgroundColor: '#fff', 
-    backgroundImage: `url(${fondo})`, 
+    backgroundColor: '#fff',
+    backgroundImage: `url(${fondo})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     zIndex: -1,
@@ -115,31 +131,34 @@ const styles = {
     border: 'none',
     borderRadius: '5px',
   },
-  loginButton: {
+  registerButton: {
     padding: '10px',
-    backgroundColor: '#fff', 
-    color: '#000', 
+    backgroundColor: '#fff',
+    color: '#000',
     border: 'none',
     borderRadius: '5px',
     cursor: 'pointer',
-    fontWeight: 'bold', 
+    fontWeight: 'bold',
+    width: '100%',
   },
-  registerText: {
+  loginText: {
     marginTop: '10px',
+    color: '#fff',
   },
-  registerButton: {
+  loginButton: {
     backgroundColor: '#000',
-    color: '#FFDC51', 
+    color: '#FFDC51',
     border: 'none',
     borderRadius: '5px',
     padding: '10px',
     fontWeight: 'bold',
     cursor: 'pointer',
+    width: '100%',
   },
   characterContainer: {
     position: 'absolute',
-    bottom: '-20px', 
-    right: '-20px', 
+    bottom: '-20px',
+    right: '-20px',
   },
   character: {
     width: '100px',
