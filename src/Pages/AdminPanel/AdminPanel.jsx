@@ -141,13 +141,13 @@ const AdminPanel = () => {
         ...product,
         price: parseFloat(product.price),
         quantity: parseInt(product.quantity),
-        images: [`/src/assets/ProdImgs/${product.imageName}`],
+        images: [`/assets/ProdImgs/${product.imageName}`],
         category: product.category,
         gender: product.gender,
         keywords: keywords 
       });
       
-      alert(`Por favor, coloca manualmente la imagen ${product.imageName} en src/assets/ProdImgs/`);
+      alert(`Por favor, coloca manualmente la imagen ${product.imageName} en public/assets/ProdImgs/`);
       
       // Resetear el formulario
       setProduct({

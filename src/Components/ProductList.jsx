@@ -105,11 +105,7 @@ const ProductList = ({ category }) => {
             >
               <FaHeart />
             </button>
-            <img 
-              src={product.images?.[0]} 
-              alt={product.name}
-              style={styles.productImage}
-            />
+            <img src={product.images[0]} alt={product.name} style={styles.productImage} />
             <div style={styles.productInfo}>
               <h3 style={styles.productName}>{product.name}</h3>
               <p style={styles.productPrice}>${product.price}</p>
