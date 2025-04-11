@@ -29,14 +29,14 @@ const Footer = () => {
         <div style={styles.textSection}>
           <h3 style={styles.textTitle}>Cuentas</h3>
           <p style={styles.textContent}>
-            Gestiona tu cuenta, suscripciones y preferencias.
+            Gestiona tu cuenta y preferencias.
           </p>
         </div>
       </div>
 
       {/* Texto "Derechos reservados" en la parte inferior */}
       <div style={styles.rightsContainer}>
-        <p style={styles.rightsText}>Derechos reservados</p>
+        <p style={styles.rightsText}>Derechos reservados Neo-Manga</p>
       </div>
     </footer>
   );

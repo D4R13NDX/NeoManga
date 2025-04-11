@@ -1,16 +1,22 @@
 import React from 'react';
+import { useAuth } from '../../context/AuthContext';
 import Header from '../../Components/Header';
 import Footer from '../../Components/Footer';
 
 const Contact = () => {
+  const { currentUser } = useAuth();
   return (
     <div style={styles.container}>
-      {/* Navbar */}
       <Header />
-
-      {/* Contenido Principal */}
       <main style={styles.main}>
         <h1 style={styles.title}>Contáctanos</h1>
+        
+        {/* Mensaje personalizado si está autenticado */}
+        {currentUser && (
+          <p style={styles.welcomeText}>
+            ¿Necesitas ayuda, {currentUser.displayName || currentUser.email.split('@')[0]}?
+          </p>
+        )}
         <div style={styles.section}>
           <h2 style={styles.sectionTitle}>Información de Contacto</h2>
           <p style={styles.sectionText}>
@@ -79,4 +85,10 @@ const styles = {
     fontSize: '18px',
     lineHeight: '1.6', 
   },
+  welcomeText: {
+    color: '#FFDC51',
+    fontSize: '16px',
+    marginBottom: '20px',
+    fontStyle: 'italic'
+  }
 };
